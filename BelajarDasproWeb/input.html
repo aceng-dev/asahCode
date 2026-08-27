@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktek Semua Tipe Input HTML</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; line-height: 1.6; }
+        .form-group { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        .info { font-size: 0.85em; color: #666; margin-top: 2px; }
+        .inline-group { display: flex; gap: 15px; align-items: center; }
+        .inline-label { font-weight: normal; display: inline-flex; align-items: center; gap: 5px; }
+        button[type="submit"], input[type="submit"] { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>Formulir Praktek Tipe Input HTML</h1>
+    <p>Di bawah ini adalah implementasi dari semua tipe input yang Anda sebutkan:</p>
+
+    <form action="/proses-data" method="POST">
+
+        <!-- 1. Text -->
+        <div class="form-group">
+            <label for="nama">1. Input Text</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda">
+            <div class="info">Input teks satu baris (Tipe default).</div>
+        </div>
+
+        <!-- 2. Number -->
+        <div class="form-group">
+            <label for="umur">2. Input Number</label>
+            <input type="number" id="umur" name="umur" min="1" max="100" placeholder="Contoh: 25">
+            <div class="info">Hanya mengizinkan format angka.</div>
+        </div>
+
+        <!-- 3. Password -->
+        <div class="form-group">
+            <label for="sandi">3. Input Password</label>
+            <input type="password" id="sandi" name="sandi" placeholder="Masukkan kata sandi">
+            <div class="info">Karakter disamarkan menjadi bintang/bulatan.</div>
+        </div>
+
+        <!-- 4. Email -->
+        <div class="form-group">
+            <label for="surel">4. Input Email</label>
+            <input type="email" id="surel" name="surel" placeholder="nama@email.com">
+            <div class="info">Khusus format email. Browser akan memunculkan error jika format salah saat di-submit.</div>
+        </div>
+
+        <!-- 5. Search -->
+        <div class="form-group">
+            <label for="cari">5. Input Search</label>
+            <input type="search" id="cari" name="cari" placeholder="Cari kata kunci...">
+            <div class="info font-italic">Input pencarian dengan ikon ✕ di ujung kanan untuk menghapus teks cepat.</div>
+        </div>
+
+        <!-- 6. Date -->
+        <div class="form-group">
+            <label for="tanggal">6. Input Date</label>
+            <input type="date" id="tanggal" name="tanggal">
+            <div class="info">Menampilkan popup kalender/penanggalan.</div>
+        </div>
+
+        <!-- 7. Time -->
+        <div class="form-group">
+            <label for="jam">7. Input Time</label>
+            <input type="time" id="jam" name="jam">
+            <div class="info">Menentukan waktu (jam dan menit) dengan visual jam.</div>
+        </div>
+
+        <!-- 8. Datetime-Local -->
+        <div class="form-group">
+            <label for="waktu-lengkap">8. Input Datetime-Local</label>
+            <input type="datetime-local" id="waktu-lengkap" name="waktu_lengkap">
+            <div class="info">Gabungan dari input tanggal (date) dan waktu (jam).</div>
+        </div>
+
+        <!-- 9. Checkbox -->
+        <div class="form-group">
+            <label>9. Input Checkbox</label>
+            <div class="inline-group">
+                <label class="inline-label">
+                    <input type="checkbox" name="hobi" value="coding"> Coding
+                </label>
+                <label class="inline-label">
+                    <input type="checkbox" name="hobi" value="gaming"> Gaming
+                </label>
+            </div>
+            <div class="info">Kotak pilihan yang bisa dicentang lebih dari satu (atau tidak sama sekali).</div>
+        </div>
+
+        <!-- 10. Radio -->
+        <div class="form-group">
+            <label>10. Input Radio</label>
+            <div class="inline-group">
+                <label class="inline-label">
+                    <input type="radio" name="gender" value="pria"> Pria
+                </label>
+                <label class="inline-label">
+                    <input type="radio" name="gender" value="wanita"> Wanita
+                </label>
+            </div>
+            <div class="info">Pilihan tunggal. Menggunakan nama atribut yang sama (<code>name="gender"</code>) agar saling terkait dalam satu grup.</div>
+        </div>
+
+        <!-- 11. Range -->
+        <div class="form-group">
+            <label for="skala">11. Input Range</label>
+            <input type="range" id="skala" name="skala" min="0" max="100" value="50">
+            <div class="info">Geser untuk mengambil nilai angka dalam jangkauan tertentu (0 hingga 100).</div>
+        </div>
+
+        <!-- 12. Color -->
+        <div class="form-group">
+            <label for="warna">12. Input Color</label>
+            <input type="color" id="warna" name="warna" value="#007bff">
+            <div class="info">Membuka panel pemilih warna (color picker).</div>
+        </div>
+
+        <!-- 13. File -->
+        <div class="form-group">
+            <label for="berkas">13. Input File</label>
+            <input type="file" id="berkas" name="berkas">
+            <div class="info">Mengunggah satu atau lebih berkas dari penyimpanan perangkat.</div>
+        </div>
+
+        <!-- 14. Hidden -->
+        <!-- Input ini sengaja tidak diberi label karena tidak terlihat oleh user -->
+        <input type="hidden" name="user_id" value="99231">
+        <div class="form-group">
+            <label>14. Input Hidden</label>
+            <p><em>(Input tersembunyi aktif di baris kode ini, cek lewat Inspect Element)</em></p>
+            <div class="info">Tidak terlihat oleh pengguna, tetapi membawa data penting bagi developer (misal: ID Pengguna).</div>
+        </div>
+
+        <!-- 15. Submit -->
+        <div class="form-group">
+            <label>15. Input Submit</label>
+            <input type="submit" value="Kirim Formulir">
+            <div class="info">Tombol khusus untuk mengirimkan semua isi data formulir ke server tujuan.</div>
+        </div>
+
+    </form>
+
+</body>
+</html>
