@@ -1,0 +1,49 @@
+/* Ini adalah selector universal */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    background-color: #0B1849;
+    
+}
+.navbarContainer{
+    padding-right: 10vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    position: static;
+}
+.navbarContainer ul{
+    display: flex;
+    justify-content: flex-end;
+    gap: 70px;
+}
+.navbarContainer ul li{
+    list-style: none;
+}
+.navbarContainer ul li a{
+    text-decoration: none;
+    color: #EBEDE3;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+}
+.shapeCircle{
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background-color: #EBEDE3;
+    position: absolute;
+}
+main{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    font-family: poppins, sans-serif;
+}
+main > section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+   transform: translate(-50%,-50%);
+    color: #EBEDE3;
+}
