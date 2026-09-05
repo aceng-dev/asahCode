@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+.headerContainer{
+    display: flex;
+    border-bottom: #15141427 1px solid;
+    margin: 0;
+    height: 10vh;
+    position: sticky;
+}
+.headerContent{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    gap: 1rem;
+}
+.headerNavbar{
+    min-width: 50%;
+    margin: auto;
+}
+.headerNavbar > ul{
+    display: flex;
+    list-style: none;
+    gap: 8rem;
+}
+.headerNavbar a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.61);
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+.headerNavbar a:hover{
+    color: #000;
+    font-weight: 700;
+}
+
+.headerImage{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    order: -1;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#heroSection{
+    display: flex;
+    min-height: calc(90vh - 10vh);
+    align-items: center;
+    
+}
+.skillsSection{
+    margin-top: 1rem;
+}
+.skillsSection > ul{
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+.skillsSection a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.61);
+    font-size: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+.skillsSection a:hover{
+    color: #000;
+    cursor: pointer;
+}
+
+.asideImage{
+    width: 300px;
+    height: 300px;
+    border-top-left-radius: 20%;
+    border-bottom-right-radius: 20% ;
+    object-fit: cover;
+    object-position: top;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    background-color: #060606;
+    
+}
+footer p{
+    color: #fff;
+    font-size: 1rem;
+}
