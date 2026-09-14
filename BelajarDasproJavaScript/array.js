@@ -31,4 +31,6 @@ const alphabet = ['a', 'b', 'c', 'd',]
 alphabet.reverse();
 console.log(alphabet);
 alphabet.sort();
-console.log(alphabet);
+console.log(alphabet.length);
+let panjang ='satuduatiga';
+console.log(panjang.length)
