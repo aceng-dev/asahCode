@@ -27,10 +27,10 @@ const [firstPerson, secondPerson] = users;
 console.log(firstPerson);
 
 // Array method
-const alphabet = ['a', 'b', 'c', 'd',]
+const alphabet = [1,2,3,4,5,6,7,10,50]
 alphabet.reverse();
 console.log(alphabet);
-alphabet.sort();
+console.log(alphabet.sort());
 console.log(alphabet.length);
 let panjang ='satuduatiga';
 console.log(panjang.length)
