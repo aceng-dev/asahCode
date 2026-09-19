@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar FE</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+      #mainContainer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 80vh;
+      }
+      #groupButtons{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      .button{
+        width: 200px;
+        margin: 10px;
+        padding: 5px;
+        font-size: 15px;
+      }
+      #links{
+        min-height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mainContainer">
+      <h1>Its Cube Time</h1>
+      <img
+        id="gambar"
+        src="https://assets.cdn.dicoding.com/original/commons/homepage-dicoding-challenge-illustration.png"
+        alt="Its a rubiks cube!"
+        width="150"
+        height="100"
+      />
+      <p id="caption">
+        <b>Sudah siap untuk memecahkan teka-teki permainan tersebut?</b>
+      </p>
+      <div id="groupButtons">
+          <button class="button">Sejarah</button>
+          <button class="button">Permainan</button
+          ><button class="button">Fun Fact</button>
+          <button class="button">Play(Coming Soon)</button>
+          <button class="button">Exit</button>
+      </div>
+    </div>
+
+    <div id="links">
+    <hr>
+  <p>Situs lainnya yang tidak kalah menarik:</p>
+  <ul>
+    <li><a href="http://www.dicoding.com" id="dicodingLink">Dicoding</a></li>
+    <li><a href="http://www.google.com" id="googleLink">Google</a></li>
+  </ul>
+</div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
