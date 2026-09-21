@@ -1,7 +1,7 @@
 function welcome(){
     alert('Deym bro muncul');
     const mainContents = document.getElementById('mainContainer');
-    mainContents.removeAttribute('hidden');
+    mainContents.style.display = 'inline';
 }
 
 function increment(){
