@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event World</title>
+    <style>
+     
+      #mainContainer {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        border: 2px solid black;
+        transform: translate(-50%,-50%);
+        padding: 15px;
+        #generateButton {
+          margin-top: 5px;
+          margin-bottom: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mainContainer" align="center" hidden>
+      <button id="incrementButton">Tekan Aku</button>
+      <h3>Kamu sudah menekan tombol ini sebanyak <span id="count">0</span></h3>
+    </div>
+    
+    <script src="event.js"></script>
+  </body>
+</html>
