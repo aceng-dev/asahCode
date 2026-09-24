@@ -20,7 +20,7 @@ function increment() {
     contents.appendChild(hiddenMessage);
     contents.appendChild(image);
   }
-}
+} 
 
 let incrementButton = document.getElementById("incrementButton");
 window.addEventListener("load", welcome);

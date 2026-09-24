@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bubbling World</title>
+  
+  <style>
+    body div {
+  width: 60%;
+
+  margin: 8px;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+  </style>
+</head>
+<body>
+  <div id="langit"  align="center">
+    LANGIT
+    <div id="luar" lign="center">
+      LUAR
+      <div id="tengah"  align="center">
+        TENGAH
+        <div id="dalam" align="center">
+          DALAM
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const divs = document.getElementsByTagName('div');
+    
+    for(let el of divs){
+        el.addEventListener('click',(event) =>{
+            event.stopPropagation();
+            alert(`Halo dari ${el.getAttribute('id').toUpperCase()}`);
+        })
+    }
+  </script>
+</body>
+</html>
