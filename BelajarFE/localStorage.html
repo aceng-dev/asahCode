@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Web Storage World</title>
+
+   <style>
+    .contents {
+  border: 2px solid black;
+  padding: 15px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+#generateButton {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+   </style>
+  </head>
+  <body>
+    <main class="contents" align="center">
+      <h1>Local Storage</h1>
+
+      <button id="incrementButton">Tambah nilai</button>
+      <button id="clear">Hapus storage</button>
+
+      <h3>Kamu sudah menekan tombol di atas sebanyak:</h3>
+      <h2 id="count">0</h2>
+    </main>
+
+    <script src="localStorage.js"></script>
+  </body>
+</html>
