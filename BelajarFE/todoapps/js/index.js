@@ -108,7 +108,7 @@ document.addEventListener(renderEvent, function(){
     console.log(todos);
     const uncompletedTodo = document.getElementById('todos');
     uncompletedTodo.innerHTML = '';
-
+    
     const completedTodo = document.getElementById('completed-todos');
     completedTodo.innerHTML = '';
     for(const todoItem of todos){
