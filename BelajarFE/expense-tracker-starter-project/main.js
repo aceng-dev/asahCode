@@ -4,14 +4,14 @@
  * ========================================================
  * Tulis seluruh kode JavaScript kamu di sini.
  */
-document.addEventListener("DOMContentLoaded", (Event) => {
+document.addEventListener("DOMContentLoaded", () => {
   let transaction = [];
-  const renderEvent = "RENDER_EVENT";
-
-  document
-    .getElementById("transactionForm")
-    .addEventListener("submit", function (ev) {
+  const renderEvent = "RENDER_TRANS";
+  const submitForm = document.getElementById("transactionForm");
+  submitForm.addEventListener("submit", function (ev) {
       ev.preventDefault();
+      addTranscation();
+      submitForm.reset();
     });
   /**
    * ========================================================
@@ -20,12 +20,12 @@ document.addEventListener("DOMContentLoaded", (Event) => {
    */
   // TODO [Basic] Ambil elemen kontainer incomeList dan expenseList dari DOM
   const incomeList = document.getElementById("incomeList");
-  const expendList = document.getElementById("expendList");
+  const expendList = document.getElementById("expenseList");
 
   function addTranscation() {
     const titleTrans = document.getElementById('transactionFormTitleInput').value;
-    const amountTrans = document.getElementById('number').value;
-    const dateTrans = document.getElementById('date').value;
+    const amountTrans = document.getElementById('transactionFormAmountInput').value;
+    const dateTrans = document.getElementById('transactionFormDateInput').value;
     const typeTrans = document.getElementById('transactionFormTypeSelect').value;
 
 
@@ -47,11 +47,46 @@ document.addEventListener("DOMContentLoaded", (Event) => {
 
     transaction.push(newTrans);
 
-    document.dispatchEvent(new Event(renderEvent));
+    document.dispatchEvent(new window.Event(renderEvent));
   }
 
   function makeTransaction(objectTf) {
-    
+      const item = document.createElement("div");
+  item.setAttribute("data-testid", "transactionItem");
+ 
+  
+  const title = document.createElement("h3");
+  title.setAttribute("data-testid", "transactionItemTitle");
+ title.innerText = objectTf.title;
+  
+  const amount = document.createElement("p");
+  amount.setAttribute("data-testid", "transactionItemAmount");
+  amount.innerText = objectTf.amount;
+  
+  const date = document.createElement("p");
+  date.setAttribute("data-testid", "transactionItemDate");
+  date.innerText = objectTf.date;
+  
+  const type = document.createElement("p");
+  type.setAttribute("data-testid", "transactionItemType");
+  type.innerText = objectTf.type;
+  
+  const actions = document.createElement("div");
+ 
+  
+  const editTypeButton = document.createElement("button");
+  editTypeButton.setAttribute("data-testid", "transactionItemEditTypeButton");
+  editTypeButton.textContent = "Ubah Tipe";
+ 
+  
+  const deleteButton = document.createElement("button");
+  deleteButton.setAttribute("data-testid", "transactionItemDeleteButton");
+  deleteButton.textContent = "Hapus";
+ 
+  
+  actions.append(editTypeButton, deleteButton);
+  item.append(title, amount, date, type, actions);
+  return item
   }
   /**
    * TODO [Basic]:
@@ -129,7 +164,17 @@ document.addEventListener("DOMContentLoaded", (Event) => {
    *  - Saat kolom pencarian dikosongkan, tampilkan kembali seluruh daftar transaksi
    */
   document.addEventListener(renderEvent, function () {
-    incomeList.innerHTML = "";
-    expendList.innerHTML = "";
+    incomeList.innerHTML = '';
+    expendList.innerHTML = '';
+
+    for(let transItem of transaction){
+      const transElement = makeTransaction(transItem);
+
+      if(transItem.type == 'income'){
+        incomeList.append(transElement);
+      }else{
+        expendList.append(transElement)
+      }
+    }
   });
 });
