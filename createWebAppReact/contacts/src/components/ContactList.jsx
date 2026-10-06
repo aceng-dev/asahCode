@@ -1,13 +1,17 @@
 import React from "react";
 import ContactItem from "./ContactItem";
 
-function ContactList({contact}) {
+function ContactList({contacts, delateContact}) {
 return (
     <div className="contact__List">
-        {contact.map((item, index) => (
+        {contacts.map((item, index) => (
                 <ContactItem
                     key={index} 
-                    {...item}/>
+                    {...item} 
+                    id={item.id}
+                    delateContact={delateContact}
+                    />
+
             ))} 
     </div>
 )
