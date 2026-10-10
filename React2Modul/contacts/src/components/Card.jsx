@@ -16,14 +16,14 @@ class Card extends React.Component {
         this.setState({ contacts: newContact });
     }
     onAddContact = ({nama, username}) => {
-        this.setState((prevState) => ({
-            contacts: [...prevState.contacts, {
+        this.setState((prevState) => {
+           return { contacts: [...prevState.contacts, {
                 id: +new Date(),
                 nama,
                 username,
                 imgUrl: "/images/default.jpg"
-            }]
-        }));
+            }] }
+        });
     }
     render() {
         return (
